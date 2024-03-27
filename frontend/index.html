@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://fav.farm/😎" />
+    <link rel="stylesheet" href="/src/assets/scss/style.scss" />
+    <title>FED23 API-utveckling Realtime Frontend</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- Här är nickname -->
+      <div>
+        <div id="nickname" class="container hide">
+          <form id="nickname-form">
+            <div class="mb-3">
+              <input
+                type="text"
+                id="nickname-input"
+                class="form-control form-control-lg"
+                required
+                placeholder="Write your name"
+              />
+            </div>
+            <button type="submit" id="connectBtn" disabled>Move on!</button>
+          </form>
+        </div>
+      </div>
+      <div class="parent">
+        <div id="highscoreContainer">
+          <h3>Highscore:</h3>
+          <ul id="highscoreList"></ul>
+          <h3>Latest Matches:</h3>
+          <ul id="matchHistoryList"></ul>
+        </div>
+      </div>
+      <!-- Slut på nickname -->
+      <!-- Lobby start -->
+      <div id="lobby" class="container">
+        <h2>Welcome to the Lobby!</h2>
+        <div id="player-list" class="mb-3">
+          <h3>Connected Players:</h3>
+          <ul id="players"></ul>
+        </div>
+
+        <p id="message"></p>
+      </div>
+      <!-- text -->
+      <!-- Lobby slut -->
+
+      <!-- Spelvy -->
+      <div>
+        <h1 id="game-title">Whack a Virus! 🦠</h1>
+        <h3 id="round"></h3>
+
+        <div id="game-wrapper">
+          <div class="grid-wrapper">
+            <div class="grid"></div>
+            <div id="gameBoard">
+              <audio
+                id="clickSound"
+                src="/sounds/mixkit-explainer-video-game-alert-sweep-236.wav"
+              ></audio>
+            </div>
+          </div>
+
+          <div id="scoreboard-wrapper">
+            <h2 id="scoreboard-title">Scoreboard</h2>
+
+            <div id="score-wrapper">
+              <span id="player1-score" class="blue">0</span>
+              <span>-</span>
+              <span id="player2-score" class="orange">0</span>
+            </div>
+
+            <div id="player1-name" class="blue">Player 1</div>
+            <div id="player1-time" class="reaction-time">time</div>
+
+            <div id="player2-name" class="orange">Player 2</div>
+            <div id="player2-time" class="reaction-time">time</div>
+          </div>
+
+          <div id="custom-confirm" class="popup hide">
+            <div class="popup-content">
+              <div id="gameResults">
+                <p id="winner"></p>
+              </div>
+
+              <p>Want a rematch?</p>
+              <button type="button" id="rematch-yes">Yes</button>
+              <button type="button" id="rematch-no">No</button>
+            </div>
+          </div>
+
+          <img
+            id="gif-image"
+            src="https://media.giphy.com/media/Vjyi7huyBwn6USw3Ei/giphy.gif"
+            class="hide"
+            alt="Bye GIF with baby dragon"
+          />
+        </div>
+        <!-- Spelvy slut -->
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
